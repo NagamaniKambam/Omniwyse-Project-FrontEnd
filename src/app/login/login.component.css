@@ -1,0 +1,27 @@
+.main-div mat-card{
+    padding: 0px;
+}
+.login-form{
+    padding: 20px;
+}
+#login-button{
+    height: 30px;
+    align-items: center;
+    object-position: center;
+
+}
+#input{
+    height: 50px;
+}
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  background-color: #5b8eee;
+  color: white;
+  font-weight: 300;
+}

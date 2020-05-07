@@ -1,0 +1,23 @@
+<div class="toolbar" role="banner">
+
+  <h1> <span>Omniwyse Announcements</span></h1>
+   
+ </div>
+<div fxLayoutAlign = "center center" fxFlexFill class = "main-div">
+    <mat-card fxFlex = "25" >
+        <mat-toolbar color = "primary">Login Page</mat-toolbar>
+        <form fxLayoutAlign = "stretch" fxLayout = "column" class="login-form" [formGroup] = "formGroup" (ngSubmit)="loginProcess()">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Username" formControlName="username">
+            </mat-form-field>
+          
+            <mat-form-field class="example-full-width">
+                <input matInput type = "password" placeholder="Password" formControlName="password">
+              </mat-form-field>
+            
+              <button mat.raised.button color = "primary" type="submit" id="login-button" >LOGIN</button>
+            </form>
+
+          
+    </mat-card>
+</div>
