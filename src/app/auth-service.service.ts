@@ -13,4 +13,10 @@ export class AuthServiceService {
   login(data):Observable<any>{
     return this.httpClient.post(environment.api+'/login',data);
   }
+  loggedIn(){
+    return !!localStorage.getItem('token');
+  }
+  getToken(){
+    return localStorage.getItem('token');
+  }
 }
