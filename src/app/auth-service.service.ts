@@ -19,4 +19,15 @@ export class AuthServiceService {
   getToken(){
     return localStorage.getItem('token');
   }
+ logout(){
+    localStorage.removeItem('ACCESS_TOKEN');
+    localStorage.clear();
+  }
+  getTags():Observable<any>{
+    return this.httpClient.get(environment.api+'/tags');
+  }
+
+  postAnnouncement(data):Observable<any>{
+    return this.httpClient.post(environment.api+'/announcements',data);
+  }
 }

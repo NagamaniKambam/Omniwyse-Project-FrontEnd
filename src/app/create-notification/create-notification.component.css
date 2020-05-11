@@ -1,0 +1,53 @@
+
+button{
+    background: rgb(13, 144, 243);
+    border-color: transparent;
+    color: #fff;
+     font-size: medium;
+}
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    background-color: #5b8eee;
+    color: white;
+    font-weight: 300;
+  }
+  .span1{
+    padding-left: 30em;
+    position: left; 
+    font-size: medium;
+  }
+
+  .Back{
+    padding-top: 3em;
+    padding-left: 2em;
+    float:left; 
+    
+  }
+ 
+  .span1 {
+    background-color: rgba(13, 84, 238, 0.856);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    position: left;
+    position: absolute;
+    right: -10px;
+    width: 100px;
+    height: 60px;
+  }
+  .form1 {
+    max-width: 620px;
+    margin: auto;
+    padding: 10px;
+    background: #97adbe;
+  }

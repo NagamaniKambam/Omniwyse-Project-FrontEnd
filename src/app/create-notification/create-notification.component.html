@@ -1,0 +1,46 @@
+<div class="toolbar" role="banner">
+
+    <h2> <span>Omniwyse Notifications</span></h2>
+ 
+    <button class="span1"  (click)="logout()">Logout</button>
+ 
+ </div>
+   <hr><hr><hr><hr><hr><hr>
+   <button class="back" (click)="Back()">Back</button> 
+  <form   [formGroup] = "notificationForm">
+
+<div class="form1" style="background-image: url('./images/2.png');">
+    
+    <p><label>Title:</label></p>
+    <p> <input type="text"  size="50"  style="height: 30px; font-size: 14pt;" formControlName="title"></p>
+
+    <p><label>Description:</label></p>
+   <p> <input type="text"  size="50"  style="height: 60px; font-size: 14pt;" formControlName="description"></p>
+
+ <p><label>Details:</label></p>
+   <p> <input type="text"  size="50"  style="height: 120px; font-size: 14pt;" formControlName="details"></p>
+
+   <p><label>Link:</label></p>
+   <p><input type="text"  size="50"  style="height: 30px; font-size: 14pt;" formControlName="link"></p>
+
+   <p><label>Image:</label></p>
+    <p><input type="file" (change)="onFileSelected($event)"></p>
+   
+    <p><label>select tags:</label></p>
+    <p><select style="height: 40px;" formControlName="tags">
+        <option>employees</option>
+        <option>javaTeam</option>
+        <option>javascriptTeam</option>
+    </select>
+
+  <!--  <p> <input type="submit"  (click)="PreviousNotifications()" value="Previous notifications"  size="50" style="height: 60px;"></p>
+
+   <p><label for="Sheduled Time/Date">Sheduled Time/Date:</label></p>  
+    <p><input type="datetime-local" id="Sheduled Time/Date" name="Sheduled Time/Date" size="60"  required></p> -->
+    <br>
+    <br>
+    <p><input type="submit" value="Send Now" (click)="postAnnouncement()" size="50" style='height: 40px;width:100px;margin:0 50%;position:relative;left:-50px;background-color: rgb(80, 226, 80);'></p>
+    
+</div>
+</form>
+

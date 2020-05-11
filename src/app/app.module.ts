@@ -15,13 +15,15 @@ import {HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './auth.guard';
-import {TokenInterceptorService} from './token-interceptor.service'
+import {TokenInterceptorService} from './token-interceptor.service';
+import { CreateNotificationComponent } from './create-notification/create-notification.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    CreateNotificationComponent
   ],
   imports: [
     BrowserModule,

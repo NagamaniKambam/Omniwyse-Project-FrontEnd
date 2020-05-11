@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
 
   loginProcess(){
     if(this.formGroup.valid){
+      console.log(this.formGroup.value)
       this.authService.login(this.formGroup.value).subscribe( result =>{
         
         if(result.isAdmin){
