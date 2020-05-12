@@ -1,5 +1,5 @@
 
-button{
+#button{
     background: rgb(13, 144, 243);
     border-color:limegreen;
     color: #fff;
@@ -26,4 +26,11 @@ button{
     padding-right: 12em;
     position: absolute; 
     font-size: medium;
+  }
+  #dashboard {
+    padding: 120px;
+  }
+  
+  .mat-card {
+      margin: 10px !important;
   }

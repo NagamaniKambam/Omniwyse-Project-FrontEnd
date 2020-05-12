@@ -28,7 +28,9 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.formGroup.value).subscribe( result =>{
         
         if(result.isAdmin){
-          localStorage.setItem('token',result.token)
+          localStorage.setItem('token',result.token);
+          localStorage.setItem('name',result.name);
+          localStorage.setItem('isAdmin',result.isAdmin);
           this.router.navigate(['/admin']);
          console.log(result);
          // alert("welcome Admin "+result.name);

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {AuthServiceService} from '../auth-service.service';
-import { FormGroup, FormControl, Validators ,FormBuilder} from '@angular/forms';
+import { FormGroup, FormControl, Validators ,FormBuilder, RequiredValidator} from '@angular/forms';
 @Component({
   selector: 'app-create-notification',
   templateUrl: './create-notification.component.html',
@@ -18,7 +18,7 @@ export class CreateNotificationComponent implements OnInit {
       details:[''],
       link:[''],
       image:[''],
-      tags:['']
+      tags:['',Validators.required]
     })
   }
 

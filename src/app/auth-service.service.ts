@@ -30,4 +30,7 @@ export class AuthServiceService {
   postAnnouncement(data):Observable<any>{
     return this.httpClient.post(environment.api+'/announcements',data);
   }
+  getAnnouncement():Observable<any>{
+    return this.httpClient.get(environment.api+'/announcements');
+  }
 }

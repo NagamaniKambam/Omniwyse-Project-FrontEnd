@@ -3,9 +3,35 @@
 
     <h1><b> <span>OMNIWYSE ANNOUNCEMENTS</span></b></h1>
  
- <button class="span1" (click)="admin()"><b>ADMIN</b></button>&nbsp;&nbsp;
- <button (click)="logout()"><b>LOGOUT</b></button> 
+ <button id="button" class="span1" (click)="admin()"><b>ADMIN</b></button>&nbsp;&nbsp;
+ <button id="button" (click)="logout()"><b>LOGOUT</b></button> 
  
  </div>
+
+ <div id="dashboard">
+    <h1><b> <span>ANNOUNCEMENTS</span></b></h1>
+	<div class="notifications-block" fxLayout="row wrap"> 
+		<mat-card *ngFor="let post of postList" class="mat-elevation-z8 notification-card" fxFlex="calc(33%-20px)" fxLayoutGap="20px">
+		  <mat-card-header>
+		    <div mat-card-avatar class="example-header-image"></div>
+		    <mat-card-title> Title:{{post.title}}</mat-card-title>Date:{{post.date}}
+		  </mat-card-header>
+		  <mat-card-content>
+             <b>Description:</b> 
+            <div [innerHTML]="post.description"></div>
+            <b>Details:</b> 
+            <div [innerHTML]="post.details"></div>
+            <b>Link:</b> 
+            <div [innerHTML]="post.link"></div>
+            <b>Image:</b> 
+            <img [innerHTML] src="http://localhost:3000post.imageURL" style="display: block; position: static;">
+		  </mat-card-content>
+		  <mat-card-actions>
+		    <button (click)="goToNotificationView()" mat-button color="primary">View Notifcaiton</button>
+		  </mat-card-actions>
+		</mat-card>
+	</div>
+
+</div>
  
  <router-outlet></router-outlet>
