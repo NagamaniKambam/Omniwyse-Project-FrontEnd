@@ -1,12 +1,14 @@
 <div class="toolbar" role="banner">
 
-    <h2> <span>Omniwyse Notifications</span></h2>
+    <h1><b> <span>OMNIWYSE ANNOUNCEMENTS</span></b></h1>
  
-    <button class="span1"  (click)="logout()">Logout</button>
+    <button id="logout" class="span1"  (click)="logout()"><b>Logout</b></button>
  
  </div>
    <hr><hr><hr><hr><hr><hr>
    <button class="back" (click)="Back()">Back</button> 
+
+   <h1><b> <span style="height: 40px;width:100px;margin:0 40%;position:relative;left:-50px;">Create Announcement</span></b></h1>
   <form   [formGroup] = "notificationForm">
 
 <div class="form1" style="background-image: url('./images/2.png');">
@@ -33,9 +35,7 @@
         <option>javascriptTeam</option>
     </select>
 
-  <!--  <p> <input type="submit"  (click)="PreviousNotifications()" value="Previous notifications"  size="50" style="height: 60px;"></p>
-
-   <p><label for="Sheduled Time/Date">Sheduled Time/Date:</label></p>  
+ <!--  <p><label for="Sheduled Time/Date">Sheduled Time/Date:</label></p>  
     <p><input type="datetime-local" id="Sheduled Time/Date" name="Sheduled Time/Date" size="60"  required></p> -->
     <br>
     <br>

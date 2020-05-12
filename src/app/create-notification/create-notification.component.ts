@@ -49,7 +49,10 @@ export class CreateNotificationComponent implements OnInit {
   }
   postAnnouncement(){
     const fd = new FormData();
-    fd.append('image',this.selectedFile,this.selectedFile.name);
+    if(this.selectedFile != null){
+      fd.append('image',this.selectedFile,this.selectedFile.name);
+    }
+   
     fd.append('title',this.notificationForm.get('title').value);
     fd.append('description',this.notificationForm.get('description').value);
     fd.append('details',this.notificationForm.get('details').value);
@@ -60,7 +63,9 @@ export class CreateNotificationComponent implements OnInit {
       console.log('Post Announcement Called');
       console.log(this.notificationForm.value);
       this.authService.postAnnouncement(fd).subscribe( result =>{
+
         console.log(result);
+        alert("Message Sent Succesfully");
       },(error:any)=>alert("Error in sending Annnouncement"))
     }
   }

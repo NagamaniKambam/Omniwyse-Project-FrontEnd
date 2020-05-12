@@ -1,7 +1,7 @@
 
 button{
     background: rgb(13, 144, 243);
-    border-color: transparent;
+    border-color:limegreen;
     color: #fff;
     position: absolute;
     right: 0;
@@ -23,7 +23,7 @@ button{
     font-weight: 300;
   }
   .span1{
-    padding-right: 10em;
-    position: left; 
+    padding-right: 12em;
+    position: absolute; 
     font-size: medium;
   }
