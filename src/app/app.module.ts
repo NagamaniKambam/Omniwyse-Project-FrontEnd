@@ -17,15 +17,13 @@ import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './auth.guard';
 import {TokenInterceptorService} from './token-interceptor.service';
 import { CreateNotificationComponent } from './create-notification/create-notification.component';
-import { ViewNotificationComponent } from './view-notification/view-notification.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminComponent,
-    CreateNotificationComponent,
-    ViewNotificationComponent
+    CreateNotificationComponent
   ],
   imports: [
     BrowserModule,

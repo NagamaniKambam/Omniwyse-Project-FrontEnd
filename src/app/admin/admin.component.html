@@ -8,13 +8,14 @@
  
  </div>
 
- <div id="dashboard">
-    <h1><b> <span>ANNOUNCEMENTS</span></b></h1>
-	<div class="notifications-block" fxLayout="row wrap"> 
-		<mat-card *ngFor="let post of postList" class="mat-elevation-z8 notification-card" fxFlex="calc(33%-20px)" fxLayoutGap="20px">
+ <div id="dashboard" >
+    <h1><b> <span style="height: 40px;width:100px;margin:0 40%;position:relative;left:-50px;">ANNOUNCEMENTS</span></b></h1>
+	<div class="notifications-block" fxLayout = "column" > 
+		<mat-card  *ngFor="let post of postList" class="mat-elevation-z8 notification-card" fxFlex="calc(33%-20px)" fxLayoutGap="20px">
 		  <mat-card-header>
 		    <div mat-card-avatar class="example-header-image"></div>
-		    <mat-card-title> Title:{{post.title}}</mat-card-title>Date:{{post.date}}
+            <mat-card-title> Title:{{post.title}}</mat-card-title>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <b>Date:{{post.date}}</b>
 		  </mat-card-header>
 		  <mat-card-content>
              <b>Description:</b> 
