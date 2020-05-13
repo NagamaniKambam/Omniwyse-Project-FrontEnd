@@ -14,19 +14,19 @@
 		<mat-card  *ngFor="let post of postList" class="mat-elevation-z8 notification-card" fxFlex="calc(33%-20px)" fxLayoutGap="20px">
 		  <mat-card-header>
 		    <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title> Title:{{post.title}}</mat-card-title>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-card-title> Title:{{post.title}}</mat-card-title>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <b>Date:{{post.date}}</b>
 		  </mat-card-header>
 		  <mat-card-content>
              <b>Description:</b> 
-            <div [innerHTML]="post.description"></div>
+            <div [innerHTML]="post.description"></div><br>
             <b>Details:</b> 
-            <div [innerHTML]="post.details"></div>
+            <div [innerHTML]="post.details"></div><br>
             <b>Link:</b> 
-            <div [innerHTML]="post.link"></div>
+            <div [innerHTML]="post.link"></div><br>
             <b>Image:</b> 
-            <img [innerHTML] src="http://localhost:3000post.imageURL" style="display: block; position: static;">
-		  </mat-card-content>
+              <div> <img [innerHTML] [src]="post.imageURL" style="height: 200px; width: 500px;"></div>
+          </mat-card-content>
 		<!--  <mat-card-actions>
 		    <button (click)="goToNotificationView()" mat-button color="primary">View Notifcaiton</button>
 		  </mat-card-actions>  -->

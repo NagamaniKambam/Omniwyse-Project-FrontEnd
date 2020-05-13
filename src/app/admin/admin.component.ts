@@ -14,10 +14,12 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
      this.authService.getAnnouncement().subscribe(result =>{
+       console.log(result);
        this.postList = result;
      },(error:any)=>alert("Announcements Cannot be Displayed"));
     console.log(this.postList);
     let admin= localStorage.getItem('isAdmin');
+
     console.log(admin);
   }
 
