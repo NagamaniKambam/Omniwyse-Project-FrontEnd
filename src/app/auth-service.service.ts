@@ -33,4 +33,7 @@ export class AuthServiceService {
   getAnnouncement():Observable<any>{
     return this.httpClient.get(environment.api+'/announcements');
   }
+  getAnnouncementById(id:String):Observable<any>{
+    return this.httpClient.get(environment.api+'/announcements/'+id);
+  }
 }

@@ -1,0 +1,35 @@
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    background-color: #5b8eee;
+    color: white;
+    font-weight: 300;
+    border-radius: 10px;
+  }
+  .span1{
+    padding-right: 0em;
+    position: absolute; 
+    font-size: medium;
+}
+#button{
+    background: rgb(13, 144, 243);
+    border-color:limegreen;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    width: 100px;
+     height: 50px ;
+     font-size: medium;
+}
+#dashboard {
+    padding: 120px;
+  }
+.viewNotification{
+  background-image: url("../images/2.png");
+}

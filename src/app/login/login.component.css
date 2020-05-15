@@ -1,13 +1,35 @@
+
 .main-div mat-card{
     padding: 0px;
+    border-radius: 25px;
+}
+#loginpage{
+    background-color: seashell;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 600px;
+    background-image: url("../images/2.png");
+}
+.mat-card{
+    border-bottom-style: solid;
 }
 .login-form{
     padding: 20px;
 }
+.mat-toolbar{
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
 #login-button{
+    border-radius: 25px;
+    margin: 0 40px;
     height: 30px;
+    width: 200px;
     align-items: center;
     object-position: center;
+    background-color: rgba(6, 41, 238, 0.336);
 
 }
 #input{
@@ -24,4 +46,5 @@
   background-color: #5b8eee;
   color: white;
   font-weight: 300;
+  border-radius: 10px;
 }

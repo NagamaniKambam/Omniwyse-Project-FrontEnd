@@ -1,46 +1,52 @@
-<div class="toolbar" role="banner">
 
-    <h1><b> <span>OMNIWYSE ANNOUNCEMENTS</span></b></h1>
- 
-    <button id="logout" class="span1"  (click)="logout()"><b>Logout</b></button>
- 
- </div>
+  <div class="toolbar" role="banner">
+
+    <h1><b> <span style="margin: 0 20px;">Omniwyse Announcements</span></b></h1>
+  
+   <button mat.raised.button id="logout" (click)="logout()"><b>Logout</b></button> 
+   
+   </div>
    <hr><hr><hr><hr><hr><hr>
-   <button class="back" (click)="Back()">Back</button> 
-
-   <h1><b> <span style="height: 40px;width:100px;margin:0 40%;position:relative;left:-50px;">Create Announcement</span></b></h1>
-  <form   [formGroup] = "notificationForm">
-
+  
 <div class="form1">
-    
+    <mat-card>
     <p><label>Title:</label></p>
-    <p> <input type="text"  size="50"  style="height: 30px; font-size: 14pt;" formControlName="title"></p>
+    <p> <input type="text"  size="50"  style="height: 40px;" formControlName = "title"></p><br>
 
     <p><label>Description:</label></p>
-   <p> <input type="text"  size="50"  style="height: 60px; font-size: 14pt;" formControlName="description"></p>
+   <p> <input type="text"  size="50"  style="height: 60px;" formControlName = "description"></p><br>
 
  <p><label>Details:</label></p>
-   <p> <input type="text"  size="50"  style="height: 120px; font-size: 14pt;" formControlName="details"></p>
+   <p> <textarea  style="height: 200px; width: 380px;" formControlName = "details"></textarea></p><br>
 
    <p><label>Link:</label></p>
-   <p><input type="text"  size="50"  style="height: 30px; font-size: 14pt;" formControlName="link"></p>
+   <p><input type="text"  size="50"  style="height: 40px;" formControlName = "link"></p><br>
 
    <p><label>Image:</label></p>
-    <p><input type="file" (change)="onFileSelected($event)"></p>
+    <p><input type="file" id="myFile" formControlName = "image"></p><br><br>
+  </mat-card>
    
-    <p><label>select tags:</label></p>
-    <p><select style="height: 40px;" formControlName="tags">
-        <option>employees</option>
-        <option>javaTeam</option>
-        <option>javascriptTeam</option>
-    </select>&nbsp;&nbsp;<b>* required</b>
-
- <!--  <p><label for="Sheduled Time/Date">Sheduled Time/Date:</label></p>  
-    <p><input type="datetime-local" id="Sheduled Time/Date" name="Sheduled Time/Date" size="60"  required></p> -->
-    <br>
-    <br>
-    <p><input type="submit" value="Send Now" (click)="postAnnouncement()" size="50" style='height: 40px;width:100px;margin:0 50%;position:relative;left:-50px;background-color: rgb(80, 226, 80);'></p>
-    
 </div>
-</form>
+<div class="form">
+  <mat-card>
+  <p><label>select tags:</label></p>
+  <p style="width: 400px;"> <select style="height: 30px; border-radius: 10px; width: 200px;">
+    <option><b>Employees</b></option>
+    <option><b>JavaTeam</b></option>
+    <option><b>JavaScriptTeam</b></option>
+  </select>&nbsp;&nbsp;&nbsp;&nbsp;
+     <input type="submit" value="Add" style="height: 30px; width: 80px;"></p>
 
+<p><label>selected Tags:</label></p> <br>  
+ <p> <input type="text"  size="30"  style="height: 100px;"></p><br><br>
+
+<!-- <p><label for="Sheduled Time/Date">Sheduled Time/Date:</label></p>
+  <p><input type="datetime-local" id="Sheduled Time/Date" name="Sheduled Time/Date" size="60"  required></p>-->
+  
+  <p><input type="button"(click) = "postAnnouncement()" value="Send Now" style="height: 40px; width: 100px; margin: 0 40%;"></p>
+</mat-card>
+</div>
+
+
+
+ <router-outlet></router-outlet>

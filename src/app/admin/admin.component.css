@@ -1,36 +1,36 @@
 
-#button{
-    background: rgb(13, 144, 243);
-    border-color:limegreen;
-    color: #fff;
-    position: absolute;
-    right: 0;
-    cursor: pointer;
-    width: 100px;
-     height: 50px ;
-     font-size: medium;
+#logout{
+  background-color: #5b8eee;
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  width: auto;
+   height: 50px ;
+   font-size: medium;
+   border-radius: 20px;
+}
+.mat-card{
+  background-color: snow;
 }
 .toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    background-color: #5b8eee;
-    color: white;
-    font-weight: 300;
-  }
-  .span1{
-    padding-right: 12em;
-    position: absolute; 
-    font-size: medium;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  background-color: #5b8eee;
+  color: white;
+  font-weight: 300;
+  border-radius: 10px;
+}
   #dashboard {
     padding: 120px;
   }
   
   .mat-card {
       margin: 10px !important;
+      border-radius: 10px;
   }

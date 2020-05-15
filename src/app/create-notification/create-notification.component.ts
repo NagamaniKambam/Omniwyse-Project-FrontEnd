@@ -66,6 +66,7 @@ export class CreateNotificationComponent implements OnInit {
 
         console.log(result);
         alert("Message Sent Succesfully");
+        this.router.navigateByUrl('/admin')
       },(error:any)=>alert("Error in sending Annnouncement"))
     }
   }

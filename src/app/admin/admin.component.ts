@@ -11,7 +11,8 @@ export class AdminComponent implements OnInit {
   public postList: any = [];
   
   constructor(private authService: AuthServiceService, private router: Router) { }
-
+  buttonDisabled:boolean = false;
+  
   ngOnInit(): void {
      this.authService.getAnnouncement().subscribe(result =>{
        console.log(result);
@@ -31,9 +32,8 @@ export class AdminComponent implements OnInit {
   admin(){
     this.router.navigateByUrl('/createnotification');
   }
-  goToNotificationView() {
-    this.router.navigateByUrl('/view-notification');
+  goToNotificationView(notificationId:String) {
+    this.router.navigate(['/admin',notificationId]);
   }
-  
 
 }

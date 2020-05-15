@@ -1,10 +1,10 @@
 
 <div class="toolbar" role="banner">
 
-    <h1><b> <span>OMNIWYSE ANNOUNCEMENTS</span></b></h1>
- 
- <button id="button" class="span1" (click)="admin()"><b>ADMIN</b></button>&nbsp;&nbsp;
- <button id="button" (click)="logout()"><b>LOGOUT</b></button> 
+	<h1><b> <span style="margin: 0 20px;">Omniwyse Announcements</span></b></h1>
+	
+ <button mat.raised.button style ="margin: 0 100px;" color = "primary" id="logout" [disabled] = 'buttonDisabled' (click)="admin()"><b>Create Announcement</b></button>
+ <button mat.raised.button id="logout" (click)="logout()"><b>Logout</b></button> 
  
  </div>
 
@@ -20,16 +20,10 @@
 		  <mat-card-content>
              <b>Description:</b> 
             <div [innerHTML]="post.description"></div><br>
-            <b>Details:</b> 
-            <div [innerHTML]="post.details"></div><br>
-            <b>Link:</b> 
-            <div [innerHTML]="post.link"></div><br>
-            <b>Image:</b> 
-              <div> <img [innerHTML] [src]="post.imageURL" style="height: 200px; width: 500px;"></div>
           </mat-card-content>
-		<!--  <mat-card-actions>
-		    <button (click)="goToNotificationView()" mat-button color="primary">View Notifcaiton</button>
-		  </mat-card-actions>  -->
+		  <mat-card-actions>
+		    <button (click)="goToNotificationView(post._id)" mat-button color="primary">View Notifcaiton</button>
+		  </mat-card-actions>  
 		</mat-card>
 	</div>
 
