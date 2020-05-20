@@ -36,4 +36,10 @@ export class AuthServiceService {
   getAnnouncementById(id:String):Observable<any>{
     return this.httpClient.get(environment.api+'/announcements/'+id);
   }
+  getTagsByUserId(userid:String):Observable<any>{
+    return this.httpClient.get(environment.api+'/userintags/'+'"'+userid+'"');
+  }
+  getAnnouncementByTags(tags:String):Observable<any>{
+    return this.httpClient.get(environment.api+'/getannouncementbytags/'+tags);
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TestabilityRegistry } from '@angular/core';
 import { Router } from '@angular/router';
 import {AuthServiceService} from '../auth-service.service';
 import { FormGroup, FormControl, Validators ,FormBuilder, RequiredValidator} from '@angular/forms';
@@ -11,6 +11,8 @@ export class CreateNotificationComponent implements OnInit {
 
   notificationForm:FormGroup;
   selectedFile: File=null;
+  tagList:String [] = [];
+  scheduleHidden:Boolean = true;
   constructor(private router:Router,private authService:AuthServiceService,private fb:FormBuilder) { 
     this.notificationForm = this.fb.group({
       title:[''],
@@ -18,7 +20,8 @@ export class CreateNotificationComponent implements OnInit {
       details:[''],
       link:[''],
       image:[''],
-      tags:['',Validators.required]
+      tags:['',Validators.required],
+      scheduledTime:['']
     })
   }
 
@@ -43,9 +46,23 @@ export class CreateNotificationComponent implements OnInit {
   }
   getTags(){
     this.authService.getTags().subscribe( result =>{
-        console.log(result)
+      console.log(result[0])
     },(error:any)=>alert("Invalid Username Or Password"))
 
+  }
+  addToTags(){
+    console.log(this.tagList.length)
+    var count = 0;
+    for(var i=0;i < this.tagList.length;i++){
+      if(this.notificationForm.get('tags').value==="" || this.notificationForm.get('tags').value === this.tagList[i]){
+        count = count+1;
+      }
+    }
+    if(this.notificationForm.get('tags').value!=="" &&(count === 0 || this.tagList.length === 0)){
+      this.tagList.push(this.notificationForm.get('tags').value);
+    }
+    
+    console.log(this.tagList)
   }
   postAnnouncement(){
     const fd = new FormData();
@@ -57,7 +74,9 @@ export class CreateNotificationComponent implements OnInit {
     fd.append('description',this.notificationForm.get('description').value);
     fd.append('details',this.notificationForm.get('details').value);
     fd.append('link',this.notificationForm.get('link').value);
-    fd.append('tags',this.notificationForm.get('tags').value);
+    fd.append('tags',JSON.stringify(this.tagList));
+    fd.append('scheduledTime',this.notificationForm.get('scheduledTime').value);
+    console.log(this.notificationForm.get('scheduledTime').value)
     console.log(fd);
     if(this. notificationForm.valid){
       console.log('Post Announcement Called');
@@ -69,5 +88,8 @@ export class CreateNotificationComponent implements OnInit {
         this.router.navigateByUrl('/admin')
       },(error:any)=>alert("Error in sending Annnouncement"))
     }
+  }
+  scheduleAnnouncement(){
+    this.scheduleHidden = false;
   }
 }

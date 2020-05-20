@@ -52,4 +52,5 @@ button{
 }
 input,textarea{
   border-radius: 15px;
+  font-size: large;
 }

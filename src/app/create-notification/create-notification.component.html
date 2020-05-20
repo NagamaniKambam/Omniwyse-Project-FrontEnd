@@ -7,7 +7,7 @@
    
    </div>
    <hr><hr><hr><hr><hr><hr>
-  
+  <form  [formGroup]="notificationForm">
 <div class="form1">
     <mat-card>
     <p><label>Title:</label></p>
@@ -17,36 +17,40 @@
    <p> <input type="text"  size="50"  style="height: 60px;" formControlName = "description"></p><br>
 
  <p><label>Details:</label></p>
-   <p> <textarea  style="height: 200px; width: 380px;" formControlName = "details"></textarea></p><br>
+   <p> <textarea  style="height: 200px; width: 480px;" formControlName = "details"></textarea></p><br>
 
    <p><label>Link:</label></p>
    <p><input type="text"  size="50"  style="height: 40px;" formControlName = "link"></p><br>
 
-   <p><label>Image:</label></p>
-    <p><input type="file" id="myFile" formControlName = "image"></p><br><br>
   </mat-card>
    
 </div>
 <div class="form">
   <mat-card>
+    <p><label>Image:</label></p>
+    <p><input type="file" id="myFile" formControlName = "image" (change)="onFileSelected($event)"></p><br><br>
   <p><label>select tags:</label></p>
-  <p style="width: 400px;"> <select style="height: 30px; border-radius: 10px; width: 200px;">
-    <option><b>Employees</b></option>
-    <option><b>JavaTeam</b></option>
-    <option><b>JavaScriptTeam</b></option>
+  <p style="width: 400px;"> <select style="height: 30px; border-radius: 10px; width: 200px;" formControlName = "tags">
+  <option>employees</option>
+  <option>javaTeam</option>
+  <option>javascriptTeam</option>
   </select>&nbsp;&nbsp;&nbsp;&nbsp;
-     <input type="submit" value="Add" style="height: 30px; width: 80px;"></p>
+     <input type="button" value="Add" style="height: 30px; width: 80px;" (click)="addToTags()"></p>
 
-<p><label>selected Tags:</label></p> <br>  
- <p> <input type="text"  size="30"  style="height: 100px;"></p><br><br>
-
-<!-- <p><label for="Sheduled Time/Date">Sheduled Time/Date:</label></p>
-  <p><input type="datetime-local" id="Sheduled Time/Date" name="Sheduled Time/Date" size="60"  required></p>-->
+<p><label>selected Tags:</label></p>
+ <p *ngFor="let tag of tagList"><b>{{tag}}</b></p><br><br>
   
-  <p><input type="button"(click) = "postAnnouncement()" value="Send Now" style="height: 40px; width: 100px; margin: 0 40%;"></p>
+  <p><input type="button" (click) = "postAnnouncement()" value="Send Now" style="height: 40px; width: 100px; margin: 0 40%;"></p>
+  <p><b style="margin: 0  45%;">OR</b></p>
+  <p><input type="button" (click) = "scheduleAnnouncement()" value="Schedule Announcement" style="height: 35px; width: auto; margin: 0 30%;"></p>
+  <div [hidden]= "scheduleHidden">
+  <p><label for="Sheduled Time/Date">Schedule Date and Time:</label></p>
+  <p><input type="datetime-local" id="Sheduled Time/Date" name="Schedule Time/Date" size="60" formControlName = "scheduledTime"></p><br>
+  <p><input type="button" (click) = "postAnnouncement()" value="Save Announcement" style="height: 35px; width: auto; margin: 0 35%;"></p>
+</div>
 </mat-card>
 </div>
-
+</form>
 
 
  <router-outlet></router-outlet>

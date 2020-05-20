@@ -23,19 +23,15 @@ export class LoginComponent implements OnInit {
 
   loginProcess(){
     if(this.formGroup.valid){
-      console.log(this.formGroup.value)
       this.authService.login(this.formGroup.value).subscribe( result =>{
         
-        if(result.isAdmin){
+        if(result){
           localStorage.setItem('token',result.token);
           localStorage.setItem('name',result.name);
           localStorage.setItem('isAdmin',result.isAdmin);
           localStorage.setItem('id',result.id);
           this.router.navigate(['/admin']);
-         console.log(result);
          // alert("welcome Admin "+result.name);
-        }else{
-          alert("Welcome "+result.name);
         }
       },(error:any)=>alert("Invalid Username Or Password"))
     }

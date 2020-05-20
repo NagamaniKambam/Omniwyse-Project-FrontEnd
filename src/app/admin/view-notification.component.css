@@ -18,10 +18,9 @@
 }
 #button{
     background: rgb(13, 144, 243);
-    border-color:limegreen;
     color: #fff;
     position: absolute;
-    right: 0;
+    right: 10px;
     cursor: pointer;
     width: 100px;
      height: 50px ;

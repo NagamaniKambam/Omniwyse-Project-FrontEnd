@@ -26,7 +26,7 @@
     border-radius: 25px;
     margin: 0 40px;
     height: 30px;
-    width: 200px;
+    width: auto;
     align-items: center;
     object-position: center;
     background-color: rgba(6, 41, 238, 0.336);
